@@ -1,77 +1,119 @@
-Options -MultiViews
-
-### para operaciones ###
-# Activar RewriteEngine
-RewriteEngine on
-
-RewriteCond %{SERVER_PORT} 80
+Options -MultiViews
+
+
+
+### para operaciones ###
+
+# Activar RewriteEngine
+
+RewriteEngine on
+
+
+
+RewriteCond %{SERVER_PORT} 80
+
 RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
 RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-RewriteRule ^(.*)$ https://app.raxem.com.mx/$1 [R,L]
-
-RewriteCond %{SCRIPT_FILENAME} -f
-RewriteCond %{SCRIPT_FILENAME} -d
-
+RewriteRule ^(.*)$ https://app2.raxem.com.mx/$1 [R,L]
+
+
+
+RewriteCond %{SCRIPT_FILENAME} -f
+
+RewriteCond %{SCRIPT_FILENAME} -d
+
+
+
 RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
 RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-RewriteRule ^(scripts|css|includes) - [L,NC]
+RewriteRule ^(scripts|css|includes) - [L,NC]
+
 RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
 RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-RewriteRule ^(\w+)/curl/(\w+)?$ $1.php?mrw=2&sub=curl&action=$2 [L,NC]
-
-# Reescribir la URL solicitada por el usuario
-#   Entrada:  vaem/operaciones/Submodulo/
-#   Salida: operaciones.php?sub=NOMBRE
-# especificar que estamos usando mrw para modificar el cfg
-# mrw sirve para la funcion regresa, que incluye las librerias
-
+RewriteRule ^(\w+)/curl/(\w+)?$ $1.php?mrw=2&sub=curl&action=$2 [L,NC]
+
+
+
+# Reescribir la URL solicitada por el usuario
+
+#   Entrada:  vaem/operaciones/Submodulo/
+
+#   Salida: operaciones.php?sub=NOMBRE
+
+# especificar que estamos usando mrw para modificar el cfg
+
+# mrw sirve para la funcion regresa, que incluye las librerias
+
+
+
 RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
 RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-RewriteRule ^public/vacantes/?$ public.php?mrw=2&sub=vacantes [L,NC]
+RewriteRule ^public/vacantes/?$ public.php?mrw=2&sub=vacantes [L,NC]
+
 RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
 RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-RewriteRule ^public/vacantes/(\w+)/?$ public.php?mrw=3&sub=vacantes&proyecto=$1 [L,NC]
+RewriteRule ^public/vacantes/(\w+)/?$ public.php?mrw=3&sub=vacantes&proyecto=$1 [L,NC]
+
 RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
 RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-RewriteRule ^public/vacantes/(\w+)/(\w+-+\w+)/?$ public.php?mrw=4&sub=vacantes&proyecto=$1&vacante=$2 [L,NC]
+RewriteRule ^public/vacantes/(\w+)/(\w+-+\w+)/?$ public.php?mrw=4&sub=vacantes&proyecto=$1&vacante=$2 [L,NC]
+
 RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
 RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-RewriteRule ^public/vacantes/(\w+)/(\w+-+\w+)/(\d+)/?$ public.php?mrw=5&sub=vacantes&proyecto=$1&vacante=$2&solicitud=$3 [L,NC]
-
+RewriteRule ^public/vacantes/(\w+)/(\w+-+\w+)/(\d+)/?$ public.php?mrw=5&sub=vacantes&proyecto=$1&vacante=$2&solicitud=$3 [L,NC]
+
+
+
 RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
 RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-RewriteRule ^descargas/?$ descargas.php?mrw=1
+RewriteRule ^descargas/?$ descargas.php?mrw=1
+
 RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
 RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-RewriteRule ^descargas/(\w+)/?$ descargas.php?mrw=1&getParam[]=$1
+RewriteRule ^descargas/(\w+)/?$ descargas.php?mrw=1&getParam[]=$1
+
 RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
 RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-RewriteRule ^descargas/(\w+)/(\w+)/?$ descargas.php?mrw=1&getParam[]=$1&getParam[]=$2
+RewriteRule ^descargas/(\w+)/(\w+)/?$ descargas.php?mrw=1&getParam[]=$1&getParam[]=$2
+
 RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
 RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-RewriteRule ^descargas/(\w+)/(\w+)/(\w+)/?$ descargas.php?mrw=1&getParam[]=$1&getParam[]=$2&getParam[]=$3
+RewriteRule ^descargas/(\w+)/(\w+)/(\w+)/?$ descargas.php?mrw=1&getParam[]=$1&getParam[]=$2&getParam[]=$3
+
 RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
 RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-RewriteRule ^descargas/(\w+)/(\w+)/(\w+)/(\w+)/?$ descargas.php?mrw=1&getParam[]=$1&getParam[]=$2&getParam[]=$3&getParam[]=$4
-
-#RewriteRule ^(\w+)/?$ $1.php?mrw=1
-#RewriteRule ^(\w+)/(\w+)/?$ $1.php?mrw=2&sub=$2
-#RewriteRule ^(\w+)/(\w+)/(\w+)/?$ $1.php?mrw=3&sub=$2&getParam[]=$3
-#RewriteRule ^(\w+)/(\w+)/(\w+)/(\w+)/?$ $1.php?mrw=4&sub=$2&getParam[]=$3&getParam[]=$4
-#RewriteRule ^(\w+)/(\w+)/(\w+)/(\w+)/(\w+)/?$ $1.php?mrw=5&sub=$2&getParam[]=$3&getParam[]=$4&getParam[]=$5
-
+RewriteRule ^descargas/(\w+)/(\w+)/(\w+)/(\w+)/?$ descargas.php?mrw=1&getParam[]=$1&getParam[]=$2&getParam[]=$3&getParam[]=$4
+
+
+
+#RewriteRule ^(\w+)/?$ $1.php?mrw=1
+
+#RewriteRule ^(\w+)/(\w+)/?$ $1.php?mrw=2&sub=$2
+
+#RewriteRule ^(\w+)/(\w+)/(\w+)/?$ $1.php?mrw=3&sub=$2&getParam[]=$3
+
+#RewriteRule ^(\w+)/(\w+)/(\w+)/(\w+)/?$ $1.php?mrw=4&sub=$2&getParam[]=$3&getParam[]=$4
+
+#RewriteRule ^(\w+)/(\w+)/(\w+)/(\w+)/(\w+)/?$ $1.php?mrw=5&sub=$2&getParam[]=$3&getParam[]=$4&getParam[]=$5
+
+
+
 RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
 RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-RewriteRule ^(\w+)/?$ inicio.php?mrw=1&seccion=$1
+RewriteRule ^(\w+)/?$ inicio.php?mrw=1&seccion=$1
+
 RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
 RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-RewriteRule ^(\w+)/(\w+)/?$ inicio.php?mrw=2&seccion=$1&sub=$2
+RewriteRule ^(\w+)/(\w+)/?$ inicio.php?mrw=2&seccion=$1&sub=$2
+
 RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
 RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-RewriteRule ^(\w+)/(\w+)/(\w+)/?$ inicio.php?mrw=3&seccion=$1&sub=$2&getParam[]=$3
+RewriteRule ^(\w+)/(\w+)/(\w+)/?$ inicio.php?mrw=3&seccion=$1&sub=$2&getParam[]=$3
+
 RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
 RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-RewriteRule ^(\w+)/(\w+)/(\w+)/(\w+)/?$ inicio.php?mrw=4&seccion=$1&sub=$2&getParam[]=$3&getParam[]=$4
+RewriteRule ^(\w+)/(\w+)/(\w+)/(\w+)/?$ inicio.php?mrw=4&seccion=$1&sub=$2&getParam[]=$3&getParam[]=$4
+
 RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
 RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
 RewriteRule ^(\w+)/(\w+)/(\w+)/(\w+)/(\w+)/?$ inicio.php?mrw=5&seccion=$1&sub=$2&getParam[]=$3&getParam[]=$4&getParam[]=$5
