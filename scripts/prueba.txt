@@ -1,0 +1,106 @@
+{
+    "puesto": "",
+    "sueldoActual": "",
+    "nss": "",
+    "rfc": "",
+    "curp": "",
+    "nombreC": "",
+    "edad": "",
+    "fechaNac": "",
+    "lugarNac": "",
+    "religion": "",
+    "tipoLicencia": "N",
+    "transporte": "publico",
+    "viveCon": "",
+    "dependientes": "",
+    "umf": "",
+    "calle": "",
+    "exterior": "",
+    "interior": "",
+    "colonia": "",
+    "ciudad": "",
+    "estado": "Aguascalientes",
+    "cp": "",
+    "email": "",
+    "telefono": "",
+    "celular": "",
+    "tecnicaInstitucion": "",
+    "tecnicaPeriodo": "",
+    "prepaInstitucion": "",
+    "prepaPeriodo": "",
+    "profInstitucion": "",
+    "profPeriodo": "",
+    "cursos": "",
+    "estudioActual": "",
+    "horarioEstudio": "",
+    "papa": "",
+    "mama": "",
+    "conyuge": "",
+    "hijo": [
+        "",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "hermano": [
+        "",
+        "",
+        "",
+        ""
+    ],
+    "empleos": {
+        "actual": {
+            "nombre": "",
+            "giro": "",
+            "sueldo": "",
+            "alta": "",
+            "baja": "",
+            "jefe": "",
+            "telefono": "",
+            "direccion": "",
+            "puesto": "",
+            "actividades": "",
+            "prestaciones": "",
+            "motivo": ""
+        },
+        "anterior": {
+            "nombre": "",
+            "giro": "",
+            "sueldo": "",
+            "alta": "",
+            "baja": "",
+            "jefe": "",
+            "telefono": "",
+            "direccion": "",
+            "puesto": "",
+            "actividades": "",
+            "prestaciones": "",
+            "motivo": ""
+        },
+        "0": {
+            "telefono": "",
+            "parentesco": "",
+            "conociendose": ""
+        },
+        "1": {
+            "telefono": "",
+            "parentesco": "",
+            "conociendose": ""
+        }
+    },
+    "referencias": [
+        {
+            "nombre": ""
+        },
+        {
+            "nombre": ""
+        }
+    ],
+    "enteradoPor": "",
+    "dispIngreso": "",
+    "computacion": "",
+    "enfermedad": {
+        "cual": ""
+    }
+}
