@@ -337,6 +337,9 @@ function generaTabla($tablaCfg,$t='',$tableArr=array()){
 				$data["data"][$k]["Estado"]=$estado[$d["Estado"]];
 			}
 			if(!$data["err"]){
+				array_walk_recursive($data["data"], function(&$v){
+					$v=htmlspecialchars($v);
+				});
 				$tableArr["data"]=cambiarColNames($data["data"],$tagNames);
 			}else{
 				$tablaStr=$data["msg"];
