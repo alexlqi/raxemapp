@@ -339,6 +339,7 @@ function generaTabla($tablaCfg,$t='',$tableArr=array()){
 			if(!$data["err"]){
 				array_walk_recursive($data["data"], function(&$v){
 					$v=str_replace("<", " menor a ", $v);
+					$v=str_replace(">", " mayor a ", $v);
 				});
 				$tableArr["data"]=cambiarColNames($data["data"],$tagNames);
 			}else{
