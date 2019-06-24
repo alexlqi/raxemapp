@@ -42,6 +42,7 @@ $colNivel=array(
 );
 $colOtro=array(
 	'h','ht','ce','cuv','cv','l','tb','h','conclusion','conclusiont','comentario','resultado',
+    'riescol','riestor',
 );
 $optSemanas="";
 for($i=1;$i<=52;$i++){
