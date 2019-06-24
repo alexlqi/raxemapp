@@ -31,7 +31,10 @@ $tagNames=array(
 	'comentario'=>'COMENTARIO',
 	'resultado'=>'RESULTADO',
 	'ht'=>'HALLAZGOS TORAX',
-	'conclusiont'=>'CONCLUSION TORAX',
+	'riescol'=>'RIESGO COLUMNA',
+    'riestor'=>'RIESGO TORAX',
+    'concradcol'=>'CONCLUSION RADIOLOGICA DE COLUMNA',
+    'concradtor'=>'CONCLUSION RADIOLOGICA DE TORAX',
 );
 
 $colNivel=array(
