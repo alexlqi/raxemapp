@@ -6,9 +6,9 @@ from sucursales s
 inner join empresas e on e.idEmpresa=s.idSucursal
 ;";
 $clienteOpt=$modelo->query2opt($sql,array("k","v"));
-$optCatalogo=$modelo->query2opt("select * from catalogos;",array("clave","valor"),array("tree"=>"cgs","selected"=>0));
-$columna=$modelo->query2arr("select categoria,grupo,subgrupo from catalogos where grupo='COLUMNA' group by subgrupo order by orden ASC;");
-$torax=$modelo->query2arr("select categoria,grupo,subgrupo from catalogos where grupo='TORAX' group by subgrupo;");
+$optCatalogo=$modelo->query2opt("select * from catalogos where activo=1;",array("clave","valor"),array("tree"=>"cgs","selected"=>0));
+$columna=$modelo->query2arr("select categoria,grupo,subgrupo from catalogos where grupo='COLUMNA' and activo=1 group by subgrupo order by orden ASC;");
+$torax=$modelo->query2arr("select categoria,grupo,subgrupo from catalogos where grupo='TORAX' and activo=1 group by subgrupo;");
 $tagNames=array(
 	'e'=>'ESCOLIOSIS',
 	'r'=>'ROTACION',
