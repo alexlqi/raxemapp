@@ -246,7 +246,7 @@ $(document).on("keyup","form",function(e){
         	<option value="2" selected="selected">Completo</option>
 		</select>
     </div>
-    <div class="form-group">
+    <div class="form-group col-xs-12">
     	<label>Comentarios:</label>
         <textarea class="form-control reseteable" name="comentario"></textarea>
     </div>
