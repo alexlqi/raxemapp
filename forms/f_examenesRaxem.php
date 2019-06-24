@@ -433,7 +433,7 @@ $(document).on("keyup","form",function(e){
             </select>
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group col-xs-12">
     	<label>Comentarios:</label>
         <textarea class="form-control reseteable" name="comentario"></textarea>
     </div>
