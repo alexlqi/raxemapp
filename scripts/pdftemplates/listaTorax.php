@@ -9,7 +9,7 @@
 <p class="display-5 textbox">
 DESPUES DE VALORAR EN TOTALIDAD LAS ESTRUCTURAS DE <b>{{%proyeccion}}</b>; RESCATAMOS LOS SIGUIENTES HALLAZGOS DE IMPORTANCIA CLINICA.
 </p>
-{{@tabla(array("ht","conclusiont","comentario","resultado"),array("class"=>"body fw","formato"=>"textbox"),$tableData);}}
+{{@tabla(array("ht","concradtor","comentario","resultado"),array("class"=>"body fw","formato"=>"textbox"),$tableData);}}
 <div style="font-style:italic;"><font color="#990000">NOTA:</font> No hay estudio que sustituya un adecuado interrogatorio y una completa exploracion clinica.</div>
 <footer style="position:fixed; bottom:0; width:100%;">
 	<div style="margin:10px auto; width:35%;" align="center">

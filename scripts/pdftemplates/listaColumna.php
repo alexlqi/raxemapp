@@ -13,7 +13,7 @@ DESPUES DE VALORAR EN TOTALIDAD LAS ESTRUCTURAS DE <b>{{%proyeccion}}</b>; RESCA
 {{@tabla(array("be","eg3","cv","uls"),array("class"=>"body fw"),$tableData);}}
 {{@tabla(array("ce","a","eiv","cuv"),array("class"=>"body fw"),$tableData);}}
 {{@tabla(array("l","tb"),array("class"=>"body hw"),$tableData);}}
-{{@tabla(array("conclusion","comentario"),array("class"=>"body fw","formato"=>"textbox"),$tableData);}}
+{{@tabla(array("concradcol","comentario"),array("class"=>"body fw","formato"=>"textbox"),$tableData);}}
 <div style="font-style:italic;"><font color="#990000">NOTA:</font> No hay estudio que sustituya un adecuado interrogatorio y una completa exploracion clinica.</div>
 <footer style="position:fixed; bottom:0; width:100%;">
 	<div style="margin:10px auto; width:35%;" align="center">

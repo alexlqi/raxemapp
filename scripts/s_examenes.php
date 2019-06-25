@@ -46,7 +46,10 @@ $tagNames=array(
 	'conclusiont'=>'CONCLUSION TORAX',
 	'cvNivel'=>'NIVEL',
 	'eivNivel'=>'NIVEL',
-	'idMedico'=>'ID MEDICO',
+	'concradcol'=>'CONCLUSIÓN RADIOLÓGICA DE COLUMNA',
+	'concradtor'=>'CONCLUSIÓN RADIOLÓGICA DE TORAX',
+	'riescol'=>'RIESGO DE COLUMNA',
+	'riestor'=>'RIESGO DE TORAX',
 );
 
 switch($ctrl){
