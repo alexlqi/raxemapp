@@ -8,7 +8,6 @@ $dsnModelo=$dsnExamenes;
 $r["err"]=true;
 $ctrl=@$_POST["ctrl"];
 unset($_POST["ctrl"]);
-@file_put_contents(__DIR__."/../debug/examenes_".time().".txt", json_encode([@$_POST,$_SESSION],JSON_PRETTY_PRINT));
 
 
 //TAG NAMES PARA MOSTRAR Y ACUALIZAR POR KEYS
@@ -201,5 +200,6 @@ switch($ctrl){
 	default:
 	break;
 }
+@file_put_contents(__DIR__."/../debug/examenes_".time().".txt", json_encode(get_defined_vars(),JSON_PRETTY_PRINT));
 echo json_encode($r);
 ?>
