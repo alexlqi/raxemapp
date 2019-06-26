@@ -31,6 +31,7 @@ $tagNames=array(
 	'comentario'=>'COMENTARIO',
 	'resultado'=>'RESULTADO',
 	'ht'=>'HALLAZGOS TORAX',
+    'oht'=>'OTROS HALLAZGOS DE TORAX'
 	'riescol'=>'RIESGO COLUMNA',
     'riestor'=>'RIESGO TORAX',
     'concradcol'=>'CONCLUSION RADIOLOGICA DE COLUMNA',
@@ -545,7 +546,7 @@ $(document).on("keyup","form",function(e){
     </div>
     <div class="form-group col-xs-12">
         <label>Otros Hallazgos:</label>
-        <textarea class="form-control reseteable"></textarea>
+        <textarea class="form-control reseteable" name="oht"></textarea>
     </div>
     <div class="form-group col-xs-12">
     	<label>Comentarios:</label>

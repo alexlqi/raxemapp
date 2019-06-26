@@ -43,6 +43,7 @@ $tagNames=array(
 	'comentario'=>'COMENTARIO',
 	'estado'=>'ESTADO',
 	'ht'=>'HALLAZGOS TORAX',
+	'oht'=>'OTROS HALLAZGOS DE TORAX'
 	'conclusiont'=>'CONCLUSION TORAX',
 	'cvNivel'=>'NIVEL',
 	'eivNivel'=>'NIVEL',
