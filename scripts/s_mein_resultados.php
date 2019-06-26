@@ -40,10 +40,15 @@ $tagNames=array(
 	'comentario'=>'COMENTARIO',
 	'estado'=>'ESTADO',
 	'ht'=>'HALLAZGOS TORAX',
+	'oht'=>'OTROS HALLAZGOS DE TORAX'
 	'conclusiont'=>'CONCLUSION TORAX',
 	'cvNivel'=>'NIVEL',
 	'eivNivel'=>'NIVEL',
-	'idMedico'=>'ID MEDICO',
+	'concradcol'=>'CONCLUSIÓN RADIOLÓGICA DE COLUMNA',
+	'concradtor'=>'CONCLUSIÓN RADIOLÓGICA DE TORAX',
+	'riescol'=>'RIESGO DE COLUMNA',
+	'riestor'=>'RIESGO DE TORAX',
+	'idMedico'=>'ID MÉDICO',
 );
 
 if(@$_GET["id"]==""){exit;}
