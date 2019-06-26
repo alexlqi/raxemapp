@@ -50,6 +50,7 @@ $tagNames=array(
 	'concradtor'=>'CONCLUSIÓN RADIOLÓGICA DE TORAX',
 	'riescol'=>'RIESGO DE COLUMNA',
 	'riestor'=>'RIESGO DE TORAX',
+	'idMedico'=>'ID MÉDICO',
 );
 
 switch($ctrl){
@@ -155,33 +156,21 @@ switch($ctrl){
 		$med=$modelo->query2arr("select if(idMedico is not null,idMedico,0) as idMedico from medicos where idUsuario='{$_SESSION["idpanda"]}';");
 		$_POST["idMedico"]=@$med["data"][0]["idMedico"];
 		$r=$modelo->array2insert("resultados",$_POST,'Registro añadido/actualizado correctamente',array_keys($tagNames));
-		if(!$med["err"] and !$r["err"]){
-			$modelo->update("update resultados set idMedico = '{$_POST["idMedico"]}' where idResultado='{$r["data"][0]["idResultado"]}';");	
-		}
 	break;
 	case 'addColumnaTorax':
 		$med=$modelo->query2arr("select if(idMedico is not null,idMedico,0) as idMedico from medicos where idUsuario='{$_SESSION["idpanda"]}';");
 		$_POST["idMedico"]=@$med["data"][0]["idMedico"];
 		$r=$modelo->array2insert("resultados",$_POST,'Registro añadido/actualizado correctamente',array_keys($tagNames));
-		if(!$med["err"] and !$r["err"]){
-			$modelo->update("update resultados set idMedico = '{$_POST["idMedico"]}' where idResultado='{$r["data"][0]["idResultado"]}';");	
-		}
 	break;
 	case 'addTorax':
 		$med=$modelo->query2arr("select if(idMedico is not null,idMedico,0) as idMedico from medicos where idUsuario='{$_SESSION["idpanda"]}';");
 		$_POST["idMedico"]=@$med["data"][0]["idMedico"];
 		$r=$modelo->array2insert("resultados",$_POST,'',array_keys($tagNames));
-		if(!$med["err"] and !$r["err"]){
-			$modelo->update("update resultados set idMedico = '{$_POST["idMedico"]}' where idResultado='{$r["data"][0]["idResultado"]}';");	
-		}
 	break;
 	case 'addOtros':
 		$med=$modelo->query2arr("select if(idMedico is not null,idMedico,0) as idMedico from medicos where idUsuario='{$_SESSION["idpanda"]}';");
 		$_POST["idMedico"]=@$med["data"][0]["idMedico"];
 		$r=$modelo->array2insert("resultados",$_POST,'',array_keys($tagNames));
-		if(!$med["err"] and !$r["err"]){
-			$modelo->update("update resultados set idMedico = '{$_POST["idMedico"]}' where idResultado='{$r["data"][0]["idResultado"]}';");	
-		}
 	break;
 	case 'cargar':
 		$idCliente=@$_SESSION["administracion"]["idCliente"];
