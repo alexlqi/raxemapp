@@ -74,7 +74,7 @@ switch($ctrl){
 			"AP Y LAT COLUMNA LUMBAR/TORAX"=>"listaColumnaTorax",
 			"PA DE TORAX"=>"listaTorax",
 		);
-		$template=(isset(@$templates[$q["data"][0]["proyeccion"]])) ? "pdftemplates/{$templates[$q["data"][0]["proyeccion"]]}.php" : "pdftemplates/listaOtrosExam.php" ;
+		$template=(isset($templates[@$q["data"][0]["proyeccion"]])) ? "pdftemplates/{$templates[$q["data"][0]["proyeccion"]]}.php" : "pdftemplates/listaOtrosExam.php" ;
 		
 		include_once("../includes/mpdf/vendor/autoload.php");
 		$pdfTmp = tempnam(sys_get_temp_dir(), "PDF");
