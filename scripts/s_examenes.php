@@ -9,7 +9,7 @@ $r["err"]=true;
 $ctrl=@$_POST["ctrl"];
 unset($_POST["ctrl"]);
 
-array_walk_recursive($_POST, function(&$v){$v=str_replace("\r\n", "; ", $v)});
+array_walk_recursive($_POST, function(&$v){$v=str_replace("\r\n", "; ", $v);});
 
 //TAG NAMES PARA MOSTRAR Y ACUALIZAR POR KEYS
 $tagNames=array(
