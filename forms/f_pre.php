@@ -3,7 +3,7 @@ $sql="select
 	concat(e.nombre,'-',s.nombre) as k,
 	concat(e.nombre,'-',s.nombre) as v
 from sucursales s
-inner join empresas e on e.idEmpresa=s.idSucursal
+inner join empresas e on e.idEmpresa=s.idEmpresa
 ;";
 $clienteOpt=$modelo->query2opt($sql,array("k","v"));
 $optCatalogo=$modelo->query2opt("select * from catalogos;",array("clave","valor"),array("tree"=>"cgs"));
