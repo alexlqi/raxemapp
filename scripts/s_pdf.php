@@ -61,7 +61,7 @@ try {
 	$tmpDir= __DIR__."/pdfTmp/".time()."/";
 	@mkdir($tmpDir,0777,true);
 	$pdfZip = __DIR__."/pdfTmp/resultados_".date("ymd_His").".zip";
-	foreach($folios as $id){
+	foreach($folios as $index=>$id){
 		$sql="select
 			r.*,
 			concat(r.cv,if(r.cvNivel is not null,concat(' Nivel: ',r.cvNivel),'')) as cv,
@@ -82,12 +82,14 @@ try {
 		$template=(isset($templates[$q["data"][0]["proyeccion"]])) ? "pdftemplates/{$templates[$q["data"][0]["proyeccion"]]}.php" : "pdftemplates/listaOtrosExam.php" ;
 		
 		$nombre=$q["data"][0]["nombre"];
-		$pdfTmp = $tmpDir."{$nombre}.pdf";
+		$pdfTmp = $tmpDir."$id_{$nombre}.pdf";
 		$mpdf = new mPDF('utf-8', 'Letter', 0, '', '11mm', '11mm', '11mm', '11mm', 0, 0);
 		#$mpdf->SetHTMLFooter('<div style="border-top:1px solid #000;font-size:7pt;text-align:center;">Raxem - Radilogia Empresarial Mexicana - Datos de la empresa - Telefono de la empresa - info@raxem.com.mx</div>');
 		#$mpdf->SetHTMLFooter('<div style="border-top:1px solid #000;font-size:7pt;text-align:center;">Raxem - Radilogia Empresarial Mexicana - Datos de la empresa - Telefono de la empresa - info@raxem.com.mx</div>','E');
 		$mpdf->WriteHTML(parsePdfTemplate($template,$q["data"][0],$tagNames));
 		$mpdf->Output($pdfTmp,'F');
+		unset($folios[$index]);
+		file_put_contents($tmpDir."faltantes.json", json_encode($folios));
 	}
 	$zip=new ZipArchive;
 	$zip->open($pdfZip, ZipArchive::CREATE);
