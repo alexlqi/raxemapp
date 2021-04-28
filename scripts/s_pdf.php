@@ -82,7 +82,7 @@ try {
 		$template=(isset($templates[$q["data"][0]["proyeccion"]])) ? "pdftemplates/{$templates[$q["data"][0]["proyeccion"]]}.php" : "pdftemplates/listaOtrosExam.php" ;
 		
 		$nombre=$q["data"][0]["nombre"];
-		$pdfTmp = __DIR__."/pdfTmp/{$nombre}.pdf";
+		$pdfTmp = $tmpDir."{$nombre}.pdf";
 		$mpdf = new mPDF('utf-8', 'Letter', 0, '', '11mm', '11mm', '11mm', '11mm', 0, 0);
 		#$mpdf->SetHTMLFooter('<div style="border-top:1px solid #000;font-size:7pt;text-align:center;">Raxem - Radilogia Empresarial Mexicana - Datos de la empresa - Telefono de la empresa - info@raxem.com.mx</div>');
 		#$mpdf->SetHTMLFooter('<div style="border-top:1px solid #000;font-size:7pt;text-align:center;">Raxem - Radilogia Empresarial Mexicana - Datos de la empresa - Telefono de la empresa - info@raxem.com.mx</div>','E');
@@ -91,7 +91,7 @@ try {
 	}
 	$zip=new ZipArchive;
 	$zip->open($pdfZip, ZipArchive::CREATE);
-	foreach(rglob($folder."*.*") as $file){
+	foreach(rglob($tmpDir."*.*") as $file){
 		$zip->addFile($file,"/".basename($file));
 	}
 	if($zip->close()){
